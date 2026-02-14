@@ -1,0 +1,14 @@
+# ignore all log files
+**/*.log
+# ignore User_Manual folder
+User_Manual/
+# all txt files that include "-"
+**/*-*.txt
+# styles.css
+/src/styles.css
+# all SRS besides final
+/docs/Software_Requirement_Specification/!.SRS_final.docx
+# all SDD besides final
+/docs/Software_Design_Document/!.SDD_final.docx
+# any README not in root
+/**/README.md
