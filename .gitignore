@@ -7,8 +7,8 @@ User_Manual/
 # styles.css
 /src/styles.css
 # all SRS besides final
-**/Software_Requirement_Specification
+**/Software_Requirement_Specification/!SRS_final.docx
 # all SDD besides final
-**/Software_Design_Document
+**/Software_Design_Document/!SDD_final.docx
 # any README not in root
 /**/README.md
