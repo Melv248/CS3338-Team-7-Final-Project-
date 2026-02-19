@@ -17,4 +17,5 @@ SRS_v*.docx
 SDD_v*.docx
 
 # g. Ignore any README files not in the root directory
-**/README.md
+!/README*
+** /README*
