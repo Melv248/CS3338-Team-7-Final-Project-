@@ -11,10 +11,13 @@ user_manual/
 styles.css
 
 # e. Ignore all SRS files besides the final version
-Software_Requirement_Specification/!(SRS_final).docx
+Software_Requirement_Specification/*.docx
+!Software_Requirement_Specification/SRS_final.docx
 
 # f. Ignore all SDD files besides the final version
-Software_Design_Document/!(SDD_final).docx
+Software_Design_Document/*.docx
+!Software_Design_Document/SDD_final.docx
 
 # g. Ignore any README files not in the root directory
+!/README*
 **/README*
