@@ -1,0 +1,324 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{longtable}
+
+\title{Forecast Manager\\Design Specification}
+\author{Forecast Manager Development Team}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Introduction}
+
+Forecast Manager is a web-based restaurant forecasting and optimization platform designed for airport restaurant managers. The system uses simulated airport flight information, restaurant sales data, and forecasting logic to generate staffing and inventory recommendations.
+
+The purpose of this design specification is to describe the structure, pages, tools, dependencies, and technologies used within the Forecast Manager platform.
+
+\section{System Architecture}
+
+The Forecast Manager platform is designed using a multi-service architecture separated into frontend, backend, database, and machine learning services.
+
+\subsection{Frontend}
+The frontend is responsible for displaying the user interface and dashboard components.
+
+\textbf{Suggested Technology:}
+\begin{itemize}
+\item React.js
+\item HTML5
+\item CSS3
+\item JavaScript
+\end{itemize}
+
+\subsection{Backend}
+The backend processes incoming data, prediction requests, and dashboard communication.
+
+\textbf{Suggested Technology:}
+\begin{itemize}
+\item Node.js
+\item Express.js
+\end{itemize}
+
+\subsection{Database}
+The database stores restaurant profiles, historical sales data, staffing information, and prediction records.
+
+\textbf{Suggested Technology:}
+\begin{itemize}
+\item MongoDB
+\end{itemize}
+
+\subsection{Machine Learning Service}
+The machine learning service is responsible for generating customer traffic forecasts and prediction confidence intervals.
+
+\textbf{Suggested Technology:}
+\begin{itemize}
+\item Python
+\item scikit-learn
+\end{itemize}
+
+\subsection{Containerization and Deployment}
+The platform uses Docker containers to separate services and improve deployment organization.
+
+\textbf{Suggested Technology:}
+\begin{itemize}
+\item Docker
+\item Docker Compose
+\item NGINX
+\end{itemize}
+
+\section{Website Pages and Features}
+
+\subsection{Login Page}
+The Login Page allows restaurant managers to securely access the Forecast Manager dashboard.
+
+\textbf{Features:}
+\begin{itemize}
+\item Username and password authentication
+\item Login validation
+\item User role verification
+\item Password recovery functionality
+\end{itemize}
+
+\subsection{Dashboard Home Page}
+The Dashboard Home Page displays a high-level overview of airport traffic predictions and restaurant performance.
+
+\textbf{Features:}
+\begin{itemize}
+\item Real-time customer traffic predictions
+\item Flight activity overview
+\item Staffing recommendations
+\item Inventory alerts
+\item Performance summary widgets
+\end{itemize}
+
+\subsection{Flight Monitoring Page}
+The Flight Monitoring Page displays airport flight information and simulated passenger traffic.
+
+\textbf{Features:}
+\begin{itemize}
+\item Flight schedules
+\item Passenger counts
+\item Gate assignments
+\item Delay and cancellation alerts
+\item Terminal activity monitoring
+\end{itemize}
+
+\subsection{Prediction Analytics Page}
+The Prediction Analytics Page displays customer forecasting information and prediction confidence intervals.
+
+\textbf{Features:}
+\begin{itemize}
+\item Hourly customer volume predictions
+\item Forecast trend analysis
+\item Confidence interval visualization
+\item Historical comparison charts
+\item Peak traffic analysis
+\end{itemize}
+
+\subsection{Staffing Recommendations Page}
+The Staffing Recommendations Page helps managers optimize employee scheduling.
+
+\textbf{Features:}
+\begin{itemize}
+\item Shift recommendations
+\item Labor cost estimates
+\item Staffing shortage alerts
+\item Peak hour staffing suggestions
+\end{itemize}
+
+\subsection{Inventory Management Page}
+The Inventory Management Page helps managers reduce waste and monitor stock usage.
+
+\textbf{Features:}
+\begin{itemize}
+\item Current inventory tracking
+\item Waste monitoring
+\item Inventory usage analytics
+\item Restock recommendations
+\end{itemize}
+
+\subsection{Reports and Analytics Page}
+The Reports and Analytics Page provides operational summaries and forecasting reports.
+
+\textbf{Features:}
+\begin{itemize}
+\item Revenue analysis
+\item Customer trend reports
+\item Staffing efficiency reports
+\item Inventory waste summaries
+\item Prediction accuracy comparisons
+\end{itemize}
+
+\subsection{Settings Page}
+The Settings Page allows users to configure account preferences and notification settings.
+
+\textbf{Features:}
+\begin{itemize}
+\item Notification preferences
+\item User account settings
+\item Password management
+\item Dashboard customization
+\end{itemize}
+
+\section{Database Design}
+
+The database stores operational and forecasting information used throughout the platform.
+
+\subsection{Restaurant Profiles}
+\begin{itemize}
+\item Restaurant name
+\item Terminal location
+\item Gate proximity
+\item Operating hours
+\end{itemize}
+
+\subsection{Flight Data}
+\begin{itemize}
+\item Flight number
+\item Passenger counts
+\item Gate assignments
+\item Delay status
+\end{itemize}
+
+\subsection{Sales Data}
+\begin{itemize}
+\item Customer counts
+\item Revenue trends
+\item Popular menu items
+\item Hourly transaction volume
+\end{itemize}
+
+\subsection{Inventory Records}
+\begin{itemize}
+\item Inventory quantities
+\item Waste tracking
+\item Restock history
+\end{itemize}
+
+\subsection{Staffing Data}
+\begin{itemize}
+\item Employee schedules
+\item Labor costs
+\item Shift assignments
+\end{itemize}
+
+\section{Dependencies and Libraries}
+
+\subsection{Frontend Dependencies}
+
+\begin{longtable}{|p{5cm}|p{8cm}|}
+\hline
+\textbf{Package} & \textbf{Purpose} \\ \hline
+react & Frontend user interface library \\ \hline
+react-dom & DOM rendering for React \\ \hline
+react-router-dom & Website routing and navigation \\ \hline
+axios & API communication \\ \hline
+bootstrap & User interface styling \\ \hline
+chart.js & Dashboard analytics charts \\ \hline
+\end{longtable}
+
+\subsection{Backend Dependencies}
+
+\begin{longtable}{|p{5cm}|p{8cm}|}
+\hline
+\textbf{Package} & \textbf{Purpose} \\ \hline
+express & Backend web framework \\ \hline
+cors & Cross-origin request handling \\ \hline
+dotenv & Environment variable management \\ \hline
+mongoose & MongoDB database connection \\ \hline
+jsonwebtoken & Authentication token management \\ \hline
+bcrypt & Password hashing \\ \hline
+nodemon & Development server auto-restart \\ \hline
+\end{longtable}
+
+\subsection{Machine Learning Dependencies}
+
+\begin{longtable}{|p{5cm}|p{8cm}|}
+\hline
+\textbf{Package} & \textbf{Purpose} \\ \hline
+python & Forecasting service language \\ \hline
+scikit-learn & Prediction model generation \\ \hline
+pandas & Data analysis and processing \\ \hline
+numpy & Numerical calculations \\ \hline
+matplotlib & Forecast visualization generation \\ \hline
+\end{longtable}
+
+\section{Docker Container Structure}
+
+The Forecast Manager platform uses Docker Compose to manage multiple application services and simplify development deployment.
+
+\subsection{Frontend Container}
+The frontend container handles the user interface and dashboard functionality.
+
+\textbf{Configuration:}
+\begin{itemize}
+\item Framework: React.js
+\item Port Mapping: 3000:3000
+\item Environment Variables:
+\begin{itemize}
+\item NODE\_ENV=development
+\item NODE\_OPTIONS=--openssl-legacy-provider
+\end{itemize}
+\item Volume Mapping:
+\begin{itemize}
+\item Local frontend directory mapped to container working directory
+\item Dedicated node\_modules Docker volume for dependency storage
+\end{itemize}
+\end{itemize}
+
+\subsection{Backend Container}
+The backend container handles API requests, business logic, authentication, and communication with the forecasting system.
+
+\textbf{Configuration:}
+\begin{itemize}
+\item Framework: Node.js + Express.js
+\item Port Mapping: 5000:5000
+\item Environment Variables:
+\begin{itemize}
+\item NODE\_ENV=production
+\end{itemize}
+\item Volume Mapping:
+\begin{itemize}
+\item Local backend directory mapped to container working directory
+\item Dedicated node\_modules Docker volume for dependency storage
+\end{itemize}
+\end{itemize}
+
+\subsection{Docker Volumes}
+The system uses Docker volumes to preserve installed dependencies and maintain development consistency.
+
+\begin{itemize}
+\item chud -- Backend node\_modules storage
+\item chungus -- Frontend node\_modules storage
+\end{itemize}
+
+\subsection{Docker Network}
+The application uses a bridge network called app-network to allow communication between frontend and backend services.
+
+\begin{itemize}
+\item Network Driver: bridge
+\item Shared communication between frontend and backend containers
+\end{itemize}
+
+\section{Security Considerations}
+
+\begin{itemize}
+\item User authentication and authorization
+\item Password encryption using bcrypt
+\item Protected API communication
+\item Secure environment variables
+\item Role-based dashboard access
+\end{itemize}
+
+\section{Conclusion}
+
+The Forecast Manager platform is designed to simulate a modern airport restaurant forecasting and operational optimization system. The platform combines forecasting concepts, dashboard analytics, staffing recommendations, and inventory optimization into a centralized web-based management solution.
+
+\end{document}
