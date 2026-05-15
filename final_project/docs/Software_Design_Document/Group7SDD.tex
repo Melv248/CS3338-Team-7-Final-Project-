@@ -1,0 +1,99 @@
+\documentclass[12pt]{report}
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec}
+
+\renewcommand\thesection{\thechapter.\arabic {section}}
+\renewcommand\thesubsection{\thesection.\arabic {subsection}}
+
+\setcounter{chapter}{0}
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+
+\begin{document}
+
+\begin{titlepage}
+\centering
+\vspace*{1in}
+
+{\Huge Forecast Manager SRS \par}
+\vspace{0.5in}
+
+{\Large Software Requirements Specification \par}
+\vspace{1in}
+
+{\Large Group 6 \par}
+\vspace{0.5in}
+
+{\large Forecast Manager Project \par}
+\vfill
+
+{\large May 15, 2026 \par}
+\end{titlepage}
+
+\clearpage
+\tableofcontents
+\clearpage
+
+\section{Introduction}
+\subsection{Purpose}
+This document describes the software requirements for the Forecast Manager system. The system is a conceptual platform designed to forecast demand and optimize staffing using external data sources.
+
+\subsection{Scope}
+The system would support managers by providing predictions, dashboards, and analytics based on collected operational and external data.
+
+\subsection{Intended Audience}
+This document is intended for developers, evaluators, and stakeholders of Group 7's project.
+
+\section{Functional Requirements}
+\subsection{User Interaction}
+\begin{itemize}
+    \item The system would allow users to log into a dashboard.
+    \item The system would allow users to view forecasting results.
+\end{itemize}
+
+\subsection{Data Processing}
+\begin{itemize}
+    \item The system would collect data from external sources such as POS, weather, and flight data.
+    \item The system would process collected data for forecasting purposes.
+\end{itemize}
+
+\subsection{Output and Recommendations}
+\begin{itemize}
+    \item The system would generate customer volume forecasts.
+    \item The system would generate staffing and operational recommendations.
+\end{itemize}
+
+\subsection{Notifications}
+\begin{itemize}
+    \item The system would provide alerts for significant changes in demand.
+\end{itemize}
+
+\subsection{Security}
+\begin{itemize}
+    \item The system would authenticate users and support role-based access control.
+\end{itemize}
+
+\section{Non-Functional Requirements}
+\begin{itemize}
+    \item The system should respond to requests within a few seconds.
+    \item The system should support multiple users and scalability.
+    \item The system should ensure data privacy and security.
+    \item The system should maintain high availability for dashboard access.
+\end{itemize}
+
+\section{External Interface Requirements}
+\subsection{User Interface}
+The system would include a dashboard displaying forecasts, analytics, and recommendations.
+
+\subsection{Software Interfaces}
+The system would conceptually integrate with:
+\begin{itemize}
+    \item Weather APIs
+    \item POS systems
+    \item Flight data systems
+\end{itemize}
+
+\section{Legal and Ethical Considerations}
+The system would ensure user data is handled securely and responsibly. It would comply with general data privacy principles and avoid misuse of predictive analytics.
+
+\end{document}
