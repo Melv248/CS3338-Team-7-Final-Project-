@@ -1,6 +1,13 @@
 \documentclass[12pt]{report}
 \usepackage[margin=1in]{geometry}
 \usepackage{longtable}
+\usepackage{titlesec}
+
+
+\renewcommand\thesection{0.\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
 
 \begin{document}
 
@@ -21,32 +28,34 @@
 {\large Forecast Manager Project \par}
 \vfill
 
-{\large \today \par}
-
+{\large May 15, 2026 \par}
 \end{titlepage}
 
-Version History 
+
+\clearpage
+\pagenumbering{arabic} 
+
+
+\tableofcontents
+\clearpage
+
 
 \section*{Version History}
+\addcontentsline{toc}{section}{Version History}
 
 \textbf{Group 7 - Forecast Manager Project}
 
 \begin{longtable}{|c|c|c|p{8cm}|}
 \hline
 Version & Snapshot & Date Range & Changes \\ \hline
-
-1 & Snapshot 1 & 13 May – 10 Jun &
+1 & Snapshot 1 & 13 May -- 10 Jun &
 Initial SRS created by Group 7. Defined system scope, basic functional requirements, and core system overview including dashboard concept and external data sources. \\ \hline
-
-2 & Snapshot 2 & 10 Jun – 30 Sep &
+2 & Snapshot 2 & 10 Jun -- 30 Sep &
 Group 7 added major features including staffing dashboard, forecasting module, and labor cost tracking. Expanded functional requirements and external interfaces. \\ \hline
-
-3 & Snapshot 3 & 30 Sep – 24 Nov &
+3 & Snapshot 3 & 30 Sep -- 24 Nov &
 Group 7 expanded system with analytics, inventory prediction, optimization tools, and external API integration. Updated non-functional requirements and system complexity. \\ \hline
-
-4 & Snapshot 4 & 24 Nov – 22 Dec &
+4 & Snapshot 4 & 24 Nov -- 22 Dec &
 Final SRS completed by Group 7 including UI refinement, deployment assumptions, performance considerations, and future work section. \\ \hline
-
 \end{longtable}
 
 
@@ -61,7 +70,6 @@ The system would support managers by providing predictions, dashboards, and anal
 \subsection{Intended Audience}
 This document is intended for developers, evaluators, and stakeholders of Group 7’s project.
 
-
 \section{Functional Requirements}
 
 \subsection{User Interaction}
@@ -72,14 +80,14 @@ This document is intended for developers, evaluators, and stakeholders of Group 
 
 \subsection{Data Processing}
 \begin{itemize}
-    \item  The system would collect data from external sources such as POS, weather, and flight data.
-    \item  The system would process collected data for forecasting purposes.
+    \item The system would collect data from external sources such as POS, weather, and flight data.
+    \item The system would process collected data for forecasting purposes.
 \end{itemize}
 
 \subsection{Output and Recommendations}
 \begin{itemize}
-    \item  The system would generate customer volume forecasts.
-     \item The system would generate staffing and operational recommendations.
+    \item The system would generate customer volume forecasts.
+    \item The system would generate staffing and operational recommendations.
 \end{itemize}
 
 \subsection{Notifications}
@@ -92,16 +100,13 @@ This document is intended for developers, evaluators, and stakeholders of Group 
     \item The system would authenticate users and support role-based access control.
 \end{itemize}
 
-
 \section{Non-Functional Requirements}
-
 \begin{itemize}
     \item The system should respond to requests within a few seconds.
     \item The system should support multiple users and scalability.
     \item The system should ensure data privacy and security.
     \item The system should maintain high availability for dashboard access.
 \end{itemize}
-
 
 \section{External Interface Requirements}
 
@@ -116,9 +121,7 @@ The system would conceptually integrate with:
     \item Flight data systems
 \end{itemize}
 
-
 \section{Legal and Ethical Considerations}
-
 The system would ensure user data is handled securely and responsibly. It would comply with general data privacy principles and avoid misuse of predictive analytics.
 
 \end{document}
