@@ -19,6 +19,10 @@
 {\large \today \par}
 \end{titlepage}
 
+% Table of Contents
+\tableofcontents
+\newpage
+
 \section*{Version History}
 
 \textbf{Group 7 - Forecast Manager Project}
@@ -43,7 +47,6 @@ The system would use data from outside sources and give results in a dashboard. 
 \subsection{Overview}
 The system would have different parts: data collection, prediction engine, backend, database, and dashboard for users.
 
-
 \section{System Architecture}
 
 The system would probably work like this:
@@ -60,7 +63,6 @@ The system would probably work like this:
 
 \subsection{System Flow}
 The flow is basically: external data $\rightarrow$ data collection $\rightarrow$ processing $\rightarrow$ prediction $\rightarrow$ backend $\rightarrow$ dashboard $\rightarrow$ user.
-
 
 \section{Module Design}
 
@@ -81,7 +83,6 @@ This would show charts, tables, and alerts to the user.
 
 \subsection{Notification System}
 This would send alerts to managers if something important happens.
-
 
 \section{Database Design}
 
@@ -116,16 +117,13 @@ The dashboard would probably have:
     \item Alerts are sent if needed
 \end{enumerate}
 
-
 \section{Security Design}
 
 We would have login for users and maybe different roles. Data should be safe, but this is just a plan.
 
-
 \section{Deployment Design}
 
 We use Docker to run parts of the system. Could be hosted in the cloud. CI/CD is a possibility if we built it.
-
 
 \section{Risks and Limitations}
 
@@ -134,7 +132,6 @@ We use Docker to run parts of the system. Could be hosted in the cloud. CI/CD is
     \item APIs might fail
     \item This is just a plan, not real software
 \end{itemize}
-
 
 \section{Future Improvements}
 
